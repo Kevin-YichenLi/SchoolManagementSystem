@@ -1,5 +1,7 @@
 package org.Kevin;
 
+import lombok.Getter;
+
 /**
  * Teacher class
  *
@@ -9,24 +11,17 @@ public class Teacher {
     private String lName;
     private String fName;
     private Department department;
+    @Getter
     private String id;
+    private static int nextId = 1;
 
-    /**
-     * constructor
-     *
-     * @param fName      first name of teacher
-     * @param lName      last name of teacher
-     * @param department department of teacher
-     */
     public Teacher(String fName, String lName, Department department) {
-
+        this.fName = fName;
+        this.lName = lName;
+        this.department = department;
+        this.id = String.format("T%03d", nextId++);
     }
 
-    /**
-     * to string
-     *
-     * @return string value of information of teacher
-     */
     @Override
     public String toString() {
         return "Teacher{" +
