@@ -19,6 +19,9 @@ public class Main {
         // create courses
         Course calculus = new Course("Calculus", 2.7, math);
 
+        // create students
+        Student tomato = new Student("Tomato", "Tomato", math);
+
         // add departments
         schoolManagementSystem1.addDepartment(math);
         schoolManagementSystem1.addDepartment(french);
@@ -29,11 +32,32 @@ public class Main {
         // add teachers
         schoolManagementSystem1.addTeacher(kevin);
 
-        // printings
-        schoolManagementSystem1.printDepartments();
-        schoolManagementSystem1.printTeachers();
+        // add students
+        schoolManagementSystem1.addStudent(tomato);
+
+        // find course
+        System.out.println(schoolManagementSystem1.findCourse("C001"));
+
+        // find department
+        System.out.println(schoolManagementSystem1.findDepartment("D001"));
+
+        // find student
+        System.out.println(schoolManagementSystem1.findStudent("S001"));
+
+        // find teacher
+        System.out.println(schoolManagementSystem1.findTeacher("T001"));
 
         // modify teacher
         schoolManagementSystem1.modifyCourseTeacher("T001", "C001");
+
+        // register course
+        schoolManagementSystem1.registerCourse("S001", "C001");
+        schoolManagementSystem1.registerCourse("S001", "C001");
+
+        // printings
+        schoolManagementSystem1.printDepartments();
+        schoolManagementSystem1.printTeachers();
+        schoolManagementSystem1.printStudents();
+        schoolManagementSystem1.printCourses();
     }
 }

@@ -1,14 +1,16 @@
 package org.Kevin;
 
 import lombok.Getter;
+import lombok.Setter;
 
 /**
  * Department class
  *
  * @author Kevin-Yichen Li
  */
+@Getter
+@Setter
 public class Department {
-    @Getter
     private String id;
     private static int nextId = 1;
     private String departmentName;

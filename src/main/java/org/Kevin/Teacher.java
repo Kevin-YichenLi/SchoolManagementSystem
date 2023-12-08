@@ -1,17 +1,19 @@
 package org.Kevin;
 
 import lombok.Getter;
+import lombok.Setter;
 
 /**
  * Teacher class
  *
  * @author Kevin-Yichen Li
  */
+@Getter
+@Setter
 public class Teacher {
     private String lName;
     private String fName;
     private Department department;
-    @Getter
     private String id;
     private static int nextId = 1;
 
@@ -24,9 +26,13 @@ public class Teacher {
 
     @Override
     public String toString() {
+        String teacherName = "";
+        if (fName != null) {
+            teacherName += fName + " " + lName;
+        }
+
         return "Teacher{" +
-                "lName='" + lName + '\'' +
-                ", fName='" + fName + '\'' +
+                "name='" + teacherName + '\'' +
                 ", department=" + department +
                 ", id='" + id + '\'' +
                 '}';
